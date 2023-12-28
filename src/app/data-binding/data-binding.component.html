@@ -1,0 +1,25 @@
+
+<p>click count {{clickcount}}</p>
+
+<p> you can not only bind the function you can also add the expression next to it</p>
+
+<button on-click="increasecount(); clickcount1=clickcount">click Me!</button>
+
+<p>value of click count1 {{clickcount1}}</p>
+
+<input type="text" (input)="handleinput($event)">
+
+
+<p>getvalue : {{getvalue}}</p>
+
+<p>getting the value from input without using any function</p>
+<input type="text" (input)="getvalue1=$any($event.target).value">
+<p>getvalue1 : {{getvalue1}}</p>
+
+<button [disabled]="isdisabled" id="b1" >disabled prroperty</button>
+
+<h1 style="color: aquamarine; font-size: large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+   Two way data binding</h1>
+   <input type="text" [(ngModel)]="names"  name="" id="">
+
+   <p>{{names}}</p>
