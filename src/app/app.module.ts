@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
+import { MouseEventsDirective } from './custom_directives/mouse-events.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBindingComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    MouseEventsDirective
   ],
   imports: [
     BrowserModule,

@@ -1,29 +1,29 @@
-<div class="panel panel-primary">
+<div class="panel panel-primary" style="background-color: plum;">
   <div class="panel panel-primary">
     {{About}}
   </div>
   <div class="panel-body">
-   <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>s.no</th>
-          <th>Title</th>
-          <th>Driector</th>
-          <th>Actor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr  [ngClass]='{"bg-danger":o,"bg-success":e ,"bg-warning":f}'
-        *ngFor="let movie of Movies; let i=index; let o=odd; let e=even ;let f=first;let l=last ">
-          <td>{{i+1}}</td>
-          <td>{{movie.Name}}</td>
-          <td>{{movie.Director}}</td>
-          <td>{{movie.Actor}}</td>
-        </tr>
-      </tbody>
-    </table>
-   </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>s.no</th>
+            <th>Title</th>
+            <th>Driector</th>
+            <th>Actor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr [ngClass]='{"bg-danger":o,"bg-success":e ,"bg-warning":f}'
+            *ngFor="let movie of Movies; let i=index; let o=odd; let e=even ;let f=first;let l=last ">
+            <td>{{i+1}}</td>
+            <td>{{movie.Name}}</td>
+            <td>{{movie.Director}}</td>
+            <td>{{movie.Actor}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -32,3 +32,54 @@
     {{Movies[0].Name}}
   </li>
 </ul>
+
+<p style="background-color:plum;">ngswithc condition</p>
+
+<br>
+<input type="text" [(ngModel)]="num">
+
+<p> {{num}}</p>
+
+<div [ngSwitch]="num.toString()">
+  <div *ngSwitchCase='1'> vimal is an Building Engineer</div>
+</div>
+
+<div>
+  <select [(ngModel)]="SelectValue" >
+    <option *ngFor="let movie of Movies" [value]="movie.Director" >{{movie.Name}}</option>
+  </select>
+</div>
+
+<div>
+  <div [ngSwitch]="SelectValue">
+    <div *ngSwitchDefault=" "> select an movie name from the drop Down to know who directed that movie</div>
+    <div *ngSwitchCase="'Vetrimaran'">Vetrimaran</div>
+  </div>
+</div>
+<div>{{SelectValue}}</div>
+
+
+<div>
+<p style="background-color: plum;"> ng if condition</p>
+<br>
+<div>
+  <label >checkbox:</label><input type="checkbox" [(ngModel)]="showchecked">
+</div>
+<p *ngIf="showchecked; then thenBlock; else elseBlock"> checkBox is checked</p>
+<p *ngIf="!showchecked">checkBox is not checked</p>
+<p>{{showchecked}}</p>
+</div>
+<!-- this THENBLOCK is shown when the showchecked condition is true -->
+<ng-template #thenBlock>
+  <p>check bof is checked - from then block</p>
+</ng-template>
+
+<!-- this ngtemplate is shown when the condition is false  -->
+<ng-template #elseBlock>
+  check box is not checked-from else block
+</ng-template>
+
+
+
+
+
