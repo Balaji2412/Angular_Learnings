@@ -1,0 +1,11 @@
+<p>Parent Component -  forms works!</p>
+
+<form action="">
+  <label for="">Car Name</label>
+  <input type="text" name="carname" [(ngModel)]="carname">
+  <button (click)="addcar()">submit</button>
+</form>
+<br>
+
+<app-clist [passing_car_list]="cars"></app-clist>
+
