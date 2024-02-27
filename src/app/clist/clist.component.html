@@ -1,4 +1,6 @@
-<h5> Child Component - list works!</h5>
+<app-forms (CaresAdded)="addcar($event)"></app-forms>
+
+<h5> Parent Component - list works!</h5>
 
 <div *ngIf="cars.length > 0 ; then carlist;else nodata">
 </div>
@@ -8,6 +10,7 @@
   <li>{{car}}</li>
 </ul>
 </ng-template>
+
 <ng-template #nodata>
   <h4>Data Doesnot exist</h4>
 </ng-template>
